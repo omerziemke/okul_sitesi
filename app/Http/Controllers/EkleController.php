@@ -24,6 +24,10 @@ class EkleController extends Controller
     {
         return view('admin.ayarlar.ekle.ekle');
     }
+    public function git2()
+    {
+        return view('admin.ayarlar.ekle.ögrt-ögrenci-ekle');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -93,6 +97,12 @@ class EkleController extends Controller
 
         return view('admin.ayarlar.ekle.edit',compact('ogrenci'));
     }
+    public  function düzen2($id){
+
+        $ogrenci=Ekle::find($id);
+
+        return view('admin.ayarlar.ekle.ögrt-ögrenci-edit',compact('ogrenci'));
+    }
 
     public  function ogrtdüzen($id){
 
@@ -131,6 +141,21 @@ class EkleController extends Controller
         return view('admin.ayarlar.ekle.index',compact('ogrenciler'));
 
     }
+    public function güncelle2(Request $request, $id)
+    {
+        $ogrenci=Ekle::find($id);
+        $ogrenci->ogr_numarasi=$request->ogr_numarasi;
+        $ogrenci->ogr_adi=$request->ogr_adi;
+        $ogrenci->ogr_soyadi=$request->ogr_soyadi;
+        $ogrenci->email=$request->email;
+        $ogrenci->ogr_telefon=$request->ogr_telefon;
+        $ogrenci->ogr_devamsizlik=$request->ogr_devamsizlik;
+        $ogrenci->ogr_sifre=$request->ogr_sifre;
+        $ogrenci->save();
+        $ogrenciler=Student::all();
+        return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
+
+    }
     public function ogrtgüncelle(Request $request, $id)
     {
         $ogretmen=Ogretmen::find($id);
@@ -156,6 +181,13 @@ class EkleController extends Controller
         Student::destroy($id);
         $ogrenciler=Student::all();
         return view('admin.ayarlar.ekle.index',compact('ogrenciler'));
+
+    }
+    public function destroy2($id)
+    {
+        Student::destroy($id);
+        $ogrenciler=Student::all();
+        return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
 
     }
     public function ogrtsil($id)

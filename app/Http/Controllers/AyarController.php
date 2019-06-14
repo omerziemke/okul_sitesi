@@ -12,13 +12,14 @@ class AyarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /*
     public function index()
     {
         $ogrenci=ayar::find(1);
-         //dd($ogrenci);
+
         return view('admin.ayarlar.create',compact('ogrenci'));
     }
-
+*/
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +40,11 @@ class AyarController extends Controller
     {
         //
     }
-
+    public function cikis()
+    {
+        auth()->logout();
+        return  redirect('/');
+    }
     /**
      * Display the specified resource.
      *

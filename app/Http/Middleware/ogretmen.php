@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 
-class admin
+class ogretmen
 {
     /**
      * Handle an incoming request.
@@ -17,12 +16,12 @@ class admin
      */
     public function handle($request, Closure $next)
     {
-        if (Auth::check()&& Auth::user()->yetki()=='admin')
+        if (Auth::check()&& Auth::user()->yetki()=='ögretmen')
         {
-            return $next($request);
+            return view('admin.kullanicilar.kullanıcıtemplate');
         }else{
 
-               return redirect('/');
+            return redirect('/');
         }
 
     }

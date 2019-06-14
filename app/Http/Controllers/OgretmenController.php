@@ -26,6 +26,10 @@ class OgretmenController extends Controller
     {
         //
     }
+    public function giris()
+    {
+        return view('admin.kullanicilar.kullanıcıtemplate');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -43,7 +47,7 @@ class OgretmenController extends Controller
         $ogretmen->ogrt_sifre=$request->ogrt_sifre;
         $ogretmen->email=$request->email;
         $ogretmen->save();
-        return view('auth.login');
+        return view('admin.ayarlar.ekle.ogretmenListe');
 
 
     }

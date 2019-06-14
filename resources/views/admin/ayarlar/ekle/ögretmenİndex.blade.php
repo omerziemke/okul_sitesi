@@ -1,7 +1,7 @@
-@extends('admin.template')
+@extends('admin.kullanicilar.kullanıcıtemplate')
 
 @section('icerik')
-    <div style="float: right; margin:15px 5px 0;"><a href="{{route("ekle")}}" class="btn btn-success">Ögrenci Ekle</a></div>
+    <div style="float: right; margin:15px 5px 0;"><a href="{{route("ekle2")}}" class="btn btn-success">Ögrenci Ekle</a></div>
     <div class="widget-box">
         <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
             <h5>Ögrenci liste</h5>
@@ -33,32 +33,32 @@
                         <td>{{$ogrenci->ogr_telefon}}</td>
                         <td>{{$ogrenci->ogr_sifre}}</td>
                         <td>
-                           <?php
-                              if($ogrenci->ogr_devamsizlik>20){
+                            <?php
+                            if($ogrenci->ogr_devamsizlik>20){
 
-                                  echo "<b style='color: red;'>  Kaldı </b>";
-                              }else{
-                               echo $ogrenci->ogr_devamsizlik;
+                                echo "<b style='color: red;'>  Kaldı </b>";
+                            }else{
+                                echo $ogrenci->ogr_devamsizlik;
 
-                              }
+                            }
 
 
 
-                           ?>
+                            ?>
 
                         </td>
 
 
-                        <form action="{{route('düzenle',$ogrenci->id)}}" method="post">
+                        <form action="{{route('düzenle2',$ogrenci->id)}}" method="post">
                             {{csrf_field()}}
                             <td>
                                 <button type="submit" value="Sil" class="btn btn-success btn-mini">Düzenle</button>
                             </td></form>
-                        <form action="{{route('sil',$ogrenci->id)}}" method="post">
-                        {{csrf_field()}}
-                        <td>
-                            <button type="submit" value="Sil" class="btn btn-danger btn-mini">Sil</button>
-                        </td>
+                        <form action="{{route('sil2',$ogrenci->id)}}" method="post">
+                            {{csrf_field()}}
+                            <td>
+                                <button type="submit" value="Sil" class="btn btn-danger btn-mini">Sil</button>
+                            </td>
 
                         </form>
                     </tr>

@@ -41,27 +41,6 @@ class User extends Authenticatable
     {
         return $this->yetki;
     }
-    public function role()
-    {
-        return $this->hasOne('App\Http\Models\Role','id','role_id');
-    }
 
-    public function checkRole($need_role)
-    {
-        return (strtolower($need_role)==strtolower($this->have_role->name)) ? true :false;
-    }
-    public function hasRole($roles)
-    {
-       $this->have_role=$this->role()->getResults();
-       if(is_array($roles)){
-           foreach ($roles as $key=>$need_role){
-               if ($this->checkRole($need_role)){
-                   return true;
-               }
-           }
 
-       }else{
-           return $this->checkRole($need_role);
-       }
-    }
 }
