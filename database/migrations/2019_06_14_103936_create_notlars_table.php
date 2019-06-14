@@ -16,6 +16,8 @@ class CreateNotlarsTable extends Migration
         Schema::create('notlars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Numarasi')->nullable();
+            $table->string('isim')->nullable();
+            $table->string('soyisim')->nullable();
             $table->string('Fizik')->nullable();
             $table->string('Kimya')->nullable();
             $table->string('Matematik')->nullable();
