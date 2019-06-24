@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\notlar;
 use Illuminate\Http\Request;
 use App\Student;
 
@@ -27,7 +28,11 @@ class StudentController extends Controller
 
 
        $ogrenci= new Student();
+       $notogrenci=new notlar();
        $ogrenci->ogr_adi=$request->ogr_adi;
+       $notogrenci->isim=$request->ogr_adi;
+       $notogrenci->soyisim=$request->ogr_soyadi;
+       $notogrenci->Numarasi=$request->ogr_numarasi;
        $ogrenci->ogr_soyadi=$request->ogr_soyadi;
        $ogrenci->ogr_numarasi=$request->ogr_numarasi;
        $ogrenci->ogr_devamsizlik=$request->ogr_devamsizlik;
@@ -35,7 +40,7 @@ class StudentController extends Controller
        $ogrenci->ogr_sifre=$request->ogr_sifre;
        $ogrenci->email=$request->email;
 
-
+       $notogrenci->save();
        $ogrenci->save();
 
        $ogrenciler=Student::all();

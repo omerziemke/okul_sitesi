@@ -8,4 +8,9 @@ class Student extends Model
 {
     protected $table='students';
     protected $guarded=[];
+    public function notlars(){
+        return $this->belongsTo('.\notlar');
+
+    }
+
 }

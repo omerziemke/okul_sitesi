@@ -47,7 +47,8 @@ class OgretmenController extends Controller
         $ogretmen->ogrt_sifre=$request->ogrt_sifre;
         $ogretmen->email=$request->email;
         $ogretmen->save();
-        return view('admin.ayarlar.ekle.ogretmenListe');
+        $ogretmenler=Ogretmen::all();
+        return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
 
 
     }

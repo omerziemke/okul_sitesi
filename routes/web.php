@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 Route::get('/','EkleController@login')->name('anasayfa');
 
-Route::group(['prefix'=>'yonetim','middleware'=>'admin'],function(){
+Route::group(['prefix'=>'yonetim'],function(){
     Route::get('/','OkulController@index')->name('yonetim.index');
    // Route::post('/','OkulController@index')->name('yonetim.index');
     //Route::resource('ayarlar','AyarController');
@@ -53,8 +53,10 @@ Route::group(['prefix'=>'yonetim','middleware'=>'admin'],function(){
 
     Route::get('kullaniciekle','EkleController@kullaniciekle')->name('kullanici.ekle');
     Route::post('kullanicikayit','EkleController@kullanicikayit')->name('kullanici.kayit');
+    Route::get('/admin', 'AdminController@index')->name('admin');
 
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

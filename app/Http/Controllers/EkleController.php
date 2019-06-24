@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\notlar;
 use App\Ogretmen;
 use App\Student;
 use App\User;
@@ -57,14 +58,19 @@ class EkleController extends Controller
             'email'=>'required',
         ));
         $ogrenci= new Ekle();
+        $notogrenci=new notlar();
         $ogrenci->ogr_adi=$request->ogr_adi;
+        $notogrenci->isim=$request->ogr_adi;
+        $notogrenci->soyisim=$request->ogr_soyadi;
         $ogrenci->ogr_soyadi=$request->ogr_soyadi;
         $ogrenci->ogr_numarasi=$request->ogr_numarasi;
+        $notogrenci->Numarasi=$request->ogr_numarasi;
         $ogrenci->ogr_devamsizlik=$request->ogr_devamsizlik;
         $ogrenci->ogr_telefon=$request->ogr_telefon;
         $ogrenci->ogr_sifre=$request->ogr_sifre;
         $ogrenci->email=$request->email;
         $ogrenci->save();
+        $notogrenci->save();
         return view('admin.ayarlar.ekle.ekle');
 
     }
@@ -129,21 +135,28 @@ class EkleController extends Controller
     public function güncelle(Request $request, $id)
     {
         $ogrenci=Ekle::find($id);
+        $notogrenci=notlar::find($id);
         $ogrenci->ogr_numarasi=$request->ogr_numarasi;
+        $notogrenci->Numarasi=$request->ogr_numarasi;
         $ogrenci->ogr_adi=$request->ogr_adi;
-        $ogrenci->ogr_soyadi=$request->ogr_soyadi;
+        $notogrenci->isim=$request->ogr_adi;
+        $notogrenci->soyisim=$request->ogr_soyadi;
         $ogrenci->email=$request->email;
         $ogrenci->ogr_telefon=$request->ogr_telefon;
         $ogrenci->ogr_devamsizlik=$request->ogr_devamsizlik;
         $ogrenci->ogr_sifre=$request->ogr_sifre;
         $ogrenci->save();
+        $notogrenci->save();
         $ogrenciler=Student::all();
         return view('admin.ayarlar.ekle.index',compact('ogrenciler'));
 
     }
     public function güncelle2(Request $request, $id)
-    {
+    {   $notogrenci=notlar::find($id);
         $ogrenci=Ekle::find($id);
+        $notogrenci->Numarasi=$request->ogr_numarasi;
+        $notogrenci->isim=$request->ogr_adi;
+        $notogrenci->soyisim=$request->ogr_soyadi;
         $ogrenci->ogr_numarasi=$request->ogr_numarasi;
         $ogrenci->ogr_adi=$request->ogr_adi;
         $ogrenci->ogr_soyadi=$request->ogr_soyadi;
@@ -152,6 +165,7 @@ class EkleController extends Controller
         $ogrenci->ogr_devamsizlik=$request->ogr_devamsizlik;
         $ogrenci->ogr_sifre=$request->ogr_sifre;
         $ogrenci->save();
+        $notogrenci->save();
         $ogrenciler=Student::all();
         return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
 

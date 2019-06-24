@@ -23,6 +23,14 @@ class CreateStudentsTable extends Migration
             $table->string('ogr_devamsizlik')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();
+            $table->foreign('ogr_numarasi')
+                ->references('Numarasi')
+                ->on('notlars')
+                ->onUpdate('cascade');
+            $table->foreign('ogr_adi')
+                ->references('isim')
+                ->on('notlars')
+                ->onUpdate('cascade');
         });
     }
 
@@ -33,6 +41,10 @@ class CreateStudentsTable extends Migration
      */
     public function down()
     {
+        Schema::table('students', function(Blueprint $table) {
+            $table->dropForeign('students_ogr_adi_foreign');
+        });
+
         Schema::dropIfExists('students');
     }
 }
