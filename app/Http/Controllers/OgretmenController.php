@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\notlar;
 use App\Ogretmen;
+use App\Student;
 use Illuminate\Http\Request;
 
 class OgretmenController extends Controller
@@ -25,6 +27,33 @@ class OgretmenController extends Controller
     public function create()
     {
         //
+    }
+    public function notlar()
+    {
+        $ogrenciler=notlar::all();
+        return view("admin.kullanicilar.ögrt_not_girme",compact('ogrenciler'));
+    }
+    public function ogrt_not_gir($id)
+    {
+        $ogrenci=notlar::find($id);
+        return view("admin.ayarlar.ekle.ogrt_not_düzen",compact('ogrenci'));
+    }
+    public function ogrt_not_güncelle(Request $request,$id)
+    {
+        $ogrenci=notlar::find($id);
+        $ogrenci->Numarasi=$request->Numarasi;
+        $ogrenci->isim=$request->isim;
+        $ogrenci->soyisim=$request->soyisim;
+        $ogrenci->Fizik=$request->Fizik;
+        $ogrenci->Kimya=$request->Kimya;
+        $ogrenci->Biyoloji=$request->Biyoloji;
+        $ogrenci->Matematik=$request->Matematik;
+        $ogrenci->Edebiyat=$request->Edebiyat;
+
+        $ogrenci->save();
+
+        $ogrenciler=notlar::all();
+        return view('admin.kullanicilar.kullanıcıtemplate',compact('ogrenciler'));
     }
     public function giris()
     {

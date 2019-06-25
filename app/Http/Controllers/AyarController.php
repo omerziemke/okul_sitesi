@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\notlar;
 use Illuminate\Http\Request;
 use App\ayar;
 
@@ -51,6 +52,14 @@ class AyarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+    public function adminnotlar ()
+    {
+        $ogrenciler=notlar::all();
+        return view("admin.ayarlar.ekle.ögr_listte",compact('ogrenciler'));
+    }
     public function show($id)
     {
         //

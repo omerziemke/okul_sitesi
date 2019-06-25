@@ -32,6 +32,13 @@ Route::group(['prefix'=>'yonetim'],function(){
     Route::post('kaydet2','StudentController@kaydet2')->name('kaydet2');
     Route::get('ekle/index','StudentController@index')->name('ekle.index');
     Route::get('ekle/index2','StudentController@index2')->name('ekle.index2');
+    Route::get('ogrenci/notlar','StudentController@notlar')->name('ogrenci.notlar');
+    Route::post('ogrenci/notgir/{id}','StudentController@notgir')->name('notgir');
+    Route::post('güncelle/not/{id}','StudentController@güncelle_not')->name('güncelle/not');
+
+    Route::get('adminogrenci/notlar','AyarController@adminnotlar')->name('adminogrenci.notlar');
+
+
 
     Route::resource('ekle','EkleController');
     Route::post('ekle/düzen2/{id}','EkleController@düzen2')->name('düzenle2');
@@ -50,6 +57,9 @@ Route::group(['prefix'=>'yonetim'],function(){
     Route::get('ogretmen/index','OgretmenController@index')->name('ogretmen.index');
     Route::post('ogretmen/ekle','OgretmenController@store')->name('ogretmen.ekle');
     Route::get('ogretmen/giris','OgretmenController@giris')->name('ogretmen.giris');
+    Route::get('ögrt_ogrenci/notlar','OgretmenController@notlar')->name('ogretmen.notlar');
+    Route::post('ogrtnotgir/{id}','OgretmenController@ogrt_not_gir')->name('ogretmen.notgir');
+    Route::post('ogrtgüncelle/not/{id}','OgretmenController@ogrt_not_güncelle')->name('ogrtgüncelle.not');
 
     Route::get('kullaniciekle','EkleController@kullaniciekle')->name('kullanici.ekle');
     Route::post('kullanicikayit','EkleController@kullanicikayit')->name('kullanici.kayit');
@@ -59,4 +69,10 @@ Route::group(['prefix'=>'yonetim'],function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix'=>'admin'],function (){
+    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+
+});
 

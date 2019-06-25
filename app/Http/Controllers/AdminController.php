@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\notlar;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +14,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('admin');
     }
 
     /**
@@ -23,6 +24,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin/template');
+        return view('admin.template');
     }
+
 }
