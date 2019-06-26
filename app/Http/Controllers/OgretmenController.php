@@ -14,6 +14,14 @@ class OgretmenController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+
     public function index()
     {
         return view('admin.create');

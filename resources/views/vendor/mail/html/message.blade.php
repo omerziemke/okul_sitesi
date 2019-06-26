@@ -7,9 +7,7 @@
     @endslot
 
     {{-- Body --}}
-    **Gönderen**  {{$gidecekler['adsoyad']}} <br>
-    **Gönderilen**  {{$gidecekler['email']}} <br>
-    **Gönderen**  {{$gidecekler['mesaj']}}
+    {{ $slot }}
 
     {{-- Subcopy --}}
     @isset($subcopy)
@@ -27,4 +25,3 @@
         @endcomponent
     @endslot
 @endcomponent
-

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\iletisimformu;
 use App\notlar;
+use App\Ogretmen;
 use Illuminate\Http\Request;
 use App\ayar;
+use Illuminate\Support\Facades\Mail;
 
 class AyarController extends Controller
 {
@@ -116,4 +119,23 @@ class AyarController extends Controller
     {
         //
     }
+
+    public function iletisim()
+    {
+     return view('admin/iletisimformu');
+    }
+
+    public function iletisimgonder(Request $request)
+    {
+
+       $bilgiler=array(
+           'adsoyad'=>request('adsoyad'),
+           'email'=>request('email'),
+           'mesaj'=>request('mesaj')
+       );
+       $email=$request->email;
+       Mail::to($email)->send(new iletisimformu($bilgiler));
+       return view('admin.template');
+    }
+
 }

@@ -16,9 +16,10 @@ class iletisimformu extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $gidecekler;
+    public function __construct($bilgiler)
     {
-        //
+        $this->gidecekler=$bilgiler;
     }
 
     /**

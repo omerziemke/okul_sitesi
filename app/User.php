@@ -42,5 +42,10 @@ class User extends Authenticatable
         return $this->yetki;
     }
 
+    public function roles()
+    {
+        return $this->belongsToMany('App\Role');
+    }
+
 
 }

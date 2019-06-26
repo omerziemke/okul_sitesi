@@ -57,6 +57,15 @@ return [
             'provider' => 'admins',
             'hash' => false,
         ],
+        'ogretmen' => [
+            'driver' => 'session',
+            'provider' => 'ogretmens',
+        ],
+        'ogretmen-api' => [
+            'driver' => 'token',
+            'provider' => 'ogretmens',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -84,6 +93,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+        'ogretmens' => [
+            'driver' => 'eloquent',
+            'model' => App\Ogretmen::class,
         ],
         // 'users' => [
         //     'driver' => 'database',
@@ -114,6 +127,11 @@ return [
         ],
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'ogretmens' => [
+            'provider' => 'ogretmens',
             'table' => 'password_resets',
             'expire' => 15,
         ],

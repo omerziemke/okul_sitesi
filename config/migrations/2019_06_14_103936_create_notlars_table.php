@@ -21,7 +21,7 @@ class CreateNotlarsTable extends Migration
             $table->string('Fizik')->nullable();
             $table->string('Kimya')->nullable();
             $table->string('Matematik')->nullable();
-            $table->string('Bioloji')->nullable();
+            $table->string('Biyoloji')->nullable();
             $table->string('Edebiyat')->nullable();
             $table->timestamps();
         });
