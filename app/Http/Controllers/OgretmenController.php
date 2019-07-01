@@ -22,6 +22,12 @@ class OgretmenController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
+     public function __construct()
+    {
+
+        $this->middleware('ogretmen');
+    }
+
     public function index()
     {
         return view('admin.create');

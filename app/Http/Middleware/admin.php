@@ -16,15 +16,16 @@ class admin
      * @return mixed
      */
 
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next,$guard = null)
     {
-        if (Auth::check()&& Auth::admin() =='admin')
+        if ($guard == "admin" && Auth::guard($guard)->check())
         {
-            return view('admin.template');
+            return $next($request);
         }else{
 
-            return redirect('/'); #login
+            return redirect('admin/login');
         }
 
     }
 }
+    

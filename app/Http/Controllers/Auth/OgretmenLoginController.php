@@ -6,18 +6,20 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class AdminLoginController extends Controller
+class OgretmenLoginController extends Controller
 {
     public function __construct()
     {
+      $this->middleware('guest:ogretmen');
 
     }
+
+
     public function showLoginForm(){
-      dd(Auth::guard('admin'));
-        return view('auth.admin-login');
+        return view('auth.ogretmen-login');
     }
     public function giris(){
-        return view('admin/template');
+        return view('admin/kullanicilar/kullanıcıtemplate');
     }
 
     public function login(Request $request)
@@ -26,16 +28,9 @@ class AdminLoginController extends Controller
            'email'=>'required|email',
            'password'=>'required|min:6'
        ]);
-       if (Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)){
-            return redirect()->intended(route('admin.giris'));
+       if (Auth::guard('ogretmen')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)){
+            return redirect()->intended(route('ogretmen.giris'));
        }
        return redirect()->back()->withInput($request->only('email','remember'));
     }
-
-    // public function guard()
-    // {
-    //   return Auth::guard('admin');
-    // }
-
-
 }

@@ -66,6 +66,7 @@ return [
             'provider' => 'ogretmens',
             'hash' => false,
         ],
+         
     ],
 
     /*
@@ -98,6 +99,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Ogretmen::class,
         ],
+        
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

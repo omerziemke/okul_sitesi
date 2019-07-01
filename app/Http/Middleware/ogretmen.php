@@ -14,14 +14,14 @@ class ogretmen
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+   public function handle($request, Closure $next,$guard = null)
     {
-        if (Auth::check()&& Auth::user()->yetki()=='ögretmen')
+        if ($guard == "ogretmen" && Auth::guard($guard)->check())
         {
-            return view('admin.kullanicilar.kullanıcıtemplate');
+            return handle($request);
         }else{
 
-            return redirect('/');
+            return redirect('ogretmen/login');
         }
 
     }

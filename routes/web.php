@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 Route::get('/','EkleController@login')->name('anasayfa');
 
-Route::group(['prefix'=>'yonetim'],function(){
+Route::group(['prefix'=>'yonetim','middleware'=>'admin'],function(){
     Route::get('/','OkulController@index')->name('yonetim.index');
    // Route::post('/','OkulController@index')->name('yonetim.index');
     //Route::resource('ayarlar','AyarController');
@@ -80,3 +80,4 @@ Route::group(['prefix'=>'admin'],function (){
 });
 
 
+Route::get('ogretmen/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
