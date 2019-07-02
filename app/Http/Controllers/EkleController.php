@@ -21,11 +21,9 @@ class EkleController extends Controller
     {
         return view('admin.ayarlar.ekle.ekle');
     }
-    public function git()
-    {
-        return view('admin.ayarlar.ekle.ekle');
-    }
-    public function git2()
+    
+
+    public function ögrenci_ekle()
     {
         return view('admin.ayarlar.ekle.ögrt-ögrenci-ekle');
     }
@@ -74,9 +72,12 @@ class EkleController extends Controller
         return view('admin.ayarlar.ekle.ekle');
 
     }
+
+
+
     public function login()
     {
-    return view('welcome');
+        return view('welcome');
     }
 
 
@@ -103,19 +104,10 @@ class EkleController extends Controller
 
         return view('admin.ayarlar.ekle.edit',compact('ogrenci'));
     }
-    public  function düzen2($id){
 
-        $ogrenci=Ekle::find($id);
 
-        return view('admin.ayarlar.ekle.ögrt-ögrenci-edit',compact('ogrenci'));
-    }
 
-    public  function ogrtdüzen($id){
 
-        $ogretmen=Ogretmen::find($id);
-
-        return view('admin.ayarlar.ekle.ogrt-edit',compact('ogretmen'));
-    }
 
 
     public function edit($id)
@@ -132,6 +124,10 @@ class EkleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
+
     public function güncelle(Request $request, $id)
     {
         $ogrenci=Ekle::find($id);
@@ -151,7 +147,11 @@ class EkleController extends Controller
         return view('admin.ayarlar.ekle.index',compact('ogrenciler'));
 
     }
-    public function güncelle2(Request $request, $id)
+
+
+
+
+    public function ögrt_ögr_güncelle(Request $request, $id)
     {   $notogrenci=notlar::find($id);
         $ogrenci=Ekle::find($id);
         $notogrenci->Numarasi=$request->ogr_numarasi;
@@ -170,19 +170,7 @@ class EkleController extends Controller
         return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
 
     }
-    public function ogrtgüncelle(Request $request, $id)
-    {
-        $ogretmen=Ogretmen::find($id);
-        $ogretmen->ogrt_adi=$request->ogrt_adi;
-        $ogretmen->ogrt_soyadi=$request->ogrt_soyadi;
-        $ogretmen->email=$request->email;
-        $ogretmen->ogrt_telefon=$request->ogrt_telefon;
-        $ogretmen->ogrt_sifre=$request->ogrt_sifre;
-        $ogretmen->save();
-        $ogretmenler=Ogretmen::all();
-        return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
 
-    }
 
     /**
      * Remove the specified resource from storage.
@@ -190,34 +178,44 @@ class EkleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
+
     public function destroy($id)
     {
         Student::destroy($id);
         $ogrenciler=Student::all();
         return view('admin.ayarlar.ekle.index',compact('ogrenciler'));
-
     }
+
+
+
     public function destroy2($id)
     {
         Student::destroy($id);
         $ogrenciler=Student::all();
         return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
-
     }
+
+
     public function ogrtsil($id)
     {
         Ogretmen::destroy($id);
         $ogretmenler=Ogretmen::all();
         return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
-
     }
+
+
+
     public  function kullaniciekle()
     {
         return view('admin.kullanicilar.create');
     }
+
+
     public function kullanicikayit(Request $request)
     {
-        $kullanici =new User();
+        $kullanici = new User();
         $kullanici->name=$request->name;
         $kullanici->email=$request->email;
         $kullanici->yetki=$request->yetki;
@@ -230,9 +228,14 @@ class EkleController extends Controller
         return view('admin.index');
 
     }
+
+
+
     public function ogrtdüzenle()
     {    $ogretmenler=Ogretmen::all();
         return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
     }
+
+
 
 }

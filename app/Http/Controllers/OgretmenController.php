@@ -41,6 +41,16 @@ class OgretmenController extends Controller
 
 
 
+    public  function düzen($id){
+
+        $ogrenci=Ekle::find($id);
+
+        return view('admin.ayarlar.ekle.ögrt-ögrenci-edit',compact('ogrenci'));
+    }
+
+
+
+
 
     public function notlar()
     {
