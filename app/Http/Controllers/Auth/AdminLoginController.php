@@ -8,17 +8,30 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminLoginController extends Controller
 {
+
+
     public function __construct()
     {
-
+        $this->middleware('auth:admin');
     }
-    public function showLoginForm(){
-      dd(Auth::guard('admin'));
+
+
+
+    public function showLoginForm()
+    {
+      
         return view('auth.admin-login');
     }
-    public function giris(){
+
+
+
+    public function giris()
+    {
         return view('admin/template');
     }
+
+
+
 
     public function login(Request $request)
     {

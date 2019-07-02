@@ -15,22 +15,33 @@ class OgretmenLoginController extends Controller
     }
 
 
-    public function showLoginForm(){
+    public function showLoginForm()
+    {
         return view('auth.ogretmen-login');
     }
-    public function giris(){
+
+
+
+    public function giris()
+    {
         return view('admin/kullanicilar/kullanıcıtemplate');
     }
 
+
+
     public function login(Request $request)
     {
-       $this->validate($request,[
+         $this->validate($request,[
            'email'=>'required|email',
            'password'=>'required|min:6'
        ]);
        if (Auth::guard('ogretmen')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)){
             return redirect()->intended(route('ogretmen.giris'));
        }
-       return redirect()->back()->withInput($request->only('email','remember'));
+
+            return redirect()->back()->withInput($request->only('email','remember'));
     }
+
+
+
 }

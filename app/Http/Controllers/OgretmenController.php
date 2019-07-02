@@ -22,11 +22,7 @@ class OgretmenController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-     public function __construct()
-    {
-
-        $this->middleware('ogretmen');
-    }
+     
 
     public function index()
     {
@@ -42,16 +38,55 @@ class OgretmenController extends Controller
     {
         //
     }
+
+
+
+
     public function notlar()
     {
         $ogrenciler=notlar::all();
         return view("admin.kullanicilar.ögrt_not_girme",compact('ogrenciler'));
     }
+
+
+
+
     public function ogrt_not_gir($id)
     {
         $ogrenci=notlar::find($id);
         return view("admin.ayarlar.ekle.ogrt_not_düzen",compact('ogrenci'));
     }
+
+
+
+     public function ögr_kaydet(Request $request){
+
+
+
+        $ogrenci= new Student();
+        $notogrenci=new notlar();
+        $notogrenci->isim=$request->ogr_adi;
+        $notogrenci->soyisim=$request->ogr_soyadi;
+        $notogrenci->Numarasi=$request->ogr_numarasi;
+        $ogrenci->ogr_adi=$request->ogr_adi;
+        $ogrenci->ogr_soyadi=$request->ogr_soyadi;
+        $ogrenci->ogr_numarasi=$request->ogr_numarasi;
+        $ogrenci->ogr_devamsizlik=$request->ogr_devamsizlik;
+        $ogrenci->ogr_telefon=$request->ogr_telefon;
+        $ogrenci->ogr_sifre=$request->ogr_sifre;
+        $ogrenci->email=$request->email;
+        $notogrenci->save();
+
+
+        $ogrenci->save();
+
+        $ogrenciler=Student::all();
+        return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
+
+    }
+
+
+
     public function ogrt_not_güncelle(Request $request,$id)
     {
         $ogrenci=notlar::find($id);
@@ -69,6 +104,9 @@ class OgretmenController extends Controller
         $ogrenciler=notlar::all();
         return view('admin.kullanicilar.kullanıcıtemplate',compact('ogrenciler'));
     }
+
+
+
     public function giris()
     {
         return view('admin.kullanicilar.kullanıcıtemplate');

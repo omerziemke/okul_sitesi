@@ -212,8 +212,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-188">
-              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+            <state relative-caret-position="34">
+              <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -473,85 +473,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="okul_yönetim" type="b2602c69:ProjectViewProjectNode" />
-              <item name="okul_yönetim" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="okul_sitesi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="okul_sitesi" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -564,6 +487,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../DonemProjesi" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -630,11 +554,12 @@
       <workItem from="1561624391735" duration="1801000" />
       <workItem from="1561635973402" duration="1903000" />
       <workItem from="1561638106225" duration="594000" />
+      <workItem from="1562058149713" duration="79000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238364000" />
+    <option name="totallyTimeSpent" value="238443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -648,7 +573,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.45662847" visible="true" weight="0.28744328" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.45662847" visible="true" weight="0.29198185" />
       <window_info id="Structure" order="1" sideWeight="0.502439" side_tool="true" weight="0.25718608" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -662,7 +587,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.66939443" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.5433715" visible="true" weight="0.055646483" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.5433715" weight="0.29787233" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -828,28 +753,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-26.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3310">
-          <caret line="593" column="13" lean-forward="true" selection-start-line="593" selection-start-column="13" selection-end-line="593" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-01.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="25" column="85" lean-forward="true" selection-start-line="25" selection-start-column="85" selection-end-line="25" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-26.log" />
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-01.log" />
     <entry file="file://$PROJECT_DIR$/storage/logs/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-03.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-612" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-03.log" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -869,13 +778,7 @@
     <entry file="file://$PROJECT_DIR$/config/logging.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Role.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1018,8 +921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-188">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        <state relative-caret-position="34">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
         </state>
       </provider>
     </entry>
