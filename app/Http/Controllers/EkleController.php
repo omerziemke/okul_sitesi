@@ -107,9 +107,6 @@ class EkleController extends Controller
 
 
 
-
-
-
     public function edit($id)
     {
         $ogrenci=Ekle::find($id);

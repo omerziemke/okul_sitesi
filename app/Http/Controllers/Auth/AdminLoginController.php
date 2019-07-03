@@ -12,7 +12,7 @@ class AdminLoginController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        $this->middleware('guest:admin');
     }
 
 
@@ -40,7 +40,7 @@ class AdminLoginController extends Controller
            'password'=>'required|min:6'
        ]);
        if (Auth::guard('admin')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)){
-            return redirect()->intended(route('admin.giris'));
+            return redirect()->intended(route('admin.dashboard'));
        }
        return redirect()->back()->withInput($request->only('email','remember'));
     }

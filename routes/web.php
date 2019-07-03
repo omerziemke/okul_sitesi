@@ -30,15 +30,11 @@ Route::group(['prefix'=>'yonetim'],function(){
 
 
 
-
-
         Route::get('adminogrenci/notlar','AyarController@adminnotlar')->name('adminogrenci.notlar');
         Route::get('iletisim','AyarController@iletisim')->name('iletisim');
         Route::post('iletisim','AyarController@iletisimgonder')->name('iletisim.gonder');
         Route::post('ayarlar/{id}','AyarController@update')->name('ayarlar.update');
         Route::get('cikis','AyarController@cikis')->name('cikis');
-
-
 
 
 
@@ -68,14 +64,17 @@ Route::group(['prefix'=>'yonetim'],function(){
         Route::post('ogrtgüncelle/not/{id}','OgretmenController@ogrt_not_güncelle')->name('ogrtgüncelle.not');
 
 
-        Route::get('/ogrtdüzen','AdminController@ogrtgüncelle')->name('ogrtdüzenle');
+        Route::get('ogrtdüzenle','OgretmenController@ogrtdüzenle')->name('yonetim.ogrtdüzenle');
+        Route::get('ogrtdüzen','AdminController@ogrtdüzenle')->name('ogrtdüzenle');
         Route::post('ogrtgüncelle/{id}','AdminController@ogrtgüncelle')->name('ogrtgüncelle');
         Route::get('/admin', 'AdminController@index')->name('admin');
-        Route::post('/ogrtdüzenn/{id}','AdminController@ogrtdüzen')->name('ogrtdüzen');
+        Route::post('ogrtdüzenn/{id}','AdminController@ogrtdüzen')->name('ogrtdüzen');
 
 
 });
 Auth::routes();
+
+       
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'admin'],function (){

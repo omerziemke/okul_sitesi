@@ -24,6 +24,8 @@ class OgretmenController extends Controller
 
      
 
+
+
     public function index()
     {
         return view('admin.create');
@@ -46,6 +48,14 @@ class OgretmenController extends Controller
         $ogrenci=Ekle::find($id);
 
         return view('admin.ayarlar.ekle.ögrt-ögrenci-edit',compact('ogrenci'));
+    }
+
+
+
+
+ public function ogrtdüzenle()
+    {    $ogretmenler=Ogretmen::all();
+        return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
     }
 
 

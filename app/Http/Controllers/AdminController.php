@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\notlar;
+use App\Ogretmen;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -27,20 +28,15 @@ class AdminController extends Controller
         return view('admin.template');
     }
 
-
-    public function ogrtgüncelle(Request $request, $id)
+/*
+ public function ogr_list()
     {
-        $ogretmen=Ogretmen::find($id);
-        $ogretmen->ogrt_adi=$request->ogrt_adi;
-        $ogretmen->ogrt_soyadi=$request->ogrt_soyadi;
-        $ogretmen->email=$request->email;
-        $ogretmen->ogrt_telefon=$request->ogrt_telefon;
-        $ogretmen->ogrt_sifre=$request->ogrt_sifre;
-        $ogretmen->save();
-        $ogretmenler=Ogretmen::all();
-        return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
 
+        $ogr=Ogretmen::all();
+        dd("$ogr");
+        return view('admin.ayarlar.ekle.ogretmenListe',compact('ogr'));
     }
+*/
 
 
 

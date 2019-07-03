@@ -43,7 +43,7 @@
         <li class=""><a href="{{route('ogretmen.index')}}"><i class="icon icon-home"></i> <span>Ögretmen Kayit Ekle</span></a> </li>
         <li class=""><a href="{{route('ekle.index')}}"><i class="icon icon-home"></i> <span>Ögrenci Kayit Yönetimi</span></a> </li>
         <li class=""><a href="{{route('adminogrenci.notlar')}}"><i class="icon icon-home"></i> <span>Ögrenci Notları</span></a> </li>
-        <li class=""><a href="{{route('ogrtdüzenle')}}"><i class="icon icon-home"></i> <span>Ögretmen Kayit Yönetimi</span></a> </li>
+         <li class=""><a href="{{route('yonetim.ogrtdüzenle')}}"><i class="icon icon-home"></i> <span>Ögretmen Kayıt</span></a> </li>
         
         <li class=""><a href="{{route('iletisim')}}"><i class="icon icon-home"></i> <span>Email Gönder</span></a> </li>
         
