@@ -12,49 +12,27 @@ use Illuminate\Support\Facades\Hash;
 
 class EkleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+
+
     public function index()
     {
         return view('admin.ayarlar.ekle.ekle');
     }
     
 
+
     public function ögrenci_ekle()
     {
         return view('admin.ayarlar.ekle.ögrt-ögrenci-ekle');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(EkleRequest $request)
     {
-        $this->validate(request(),array(
-            'ogr_numarasi'=>'required',
-            'ogr_adi'=>'required',
-            'ogr_soyadi'=>'required',
-            'ogr_telefon'=>'required',
-            'ogr_sifre'=>'required',
-            'ogr_devamsizlik'=>'required',
-            'email'=>'required',
-        ));
+    
         $ogrenci= new Ekle();
         $notogrenci=new notlar();
         $ogrenci->ogr_adi=$request->ogr_adi;
@@ -80,24 +58,8 @@ class EkleController extends Controller
         return view('welcome');
     }
 
+ 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public  function düzen($id){
 
         $ogrenci=Ekle::find($id);
@@ -114,15 +76,7 @@ class EkleController extends Controller
         return view('admin.ekle.edit',compact('ogrenci','tumogrenciler'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-
+  
 
 
     public function güncelle(Request $request, $id)
@@ -169,13 +123,6 @@ class EkleController extends Controller
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
 
 
     public function destroy($id)
@@ -187,12 +134,15 @@ class EkleController extends Controller
 
 
 
+
     public function destroy2($id)
     {
         Student::destroy($id);
         $ogrenciler=Student::all();
         return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
     }
+
+
 
 
     public function ogrtsil($id)
@@ -204,10 +154,13 @@ class EkleController extends Controller
 
 
 
+
     public  function kullaniciekle()
     {
         return view('admin.kullanicilar.create');
     }
+
+
 
 
     public function kullanicikayit(Request $request)
@@ -228,7 +181,8 @@ class EkleController extends Controller
 
 
 
-    public function ogrtdüzenle()
+
+     public function ogrtdüzenle()
     {    $ogretmenler=Ogretmen::all();
         return view('admin.ayarlar.ekle.ogretmenListe',compact('ogretmenler'));
     }

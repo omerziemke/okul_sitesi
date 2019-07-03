@@ -8,17 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class OgretmenLoginController extends Controller
 {
-    public function __construct()
-    {
-      $this->middleware('guest:ogretmen');
-
-    }
-
-
-    public function showLoginForm()
-    {
-        return view('auth.ogretmen-login');
-    }
+  
 
 
 
@@ -26,22 +16,6 @@ class OgretmenLoginController extends Controller
     {
         return view('admin/kullanicilar/kullanıcıtemplate');
     }
-
-
-
-    public function login(Request $request)
-    {
-         $this->validate($request,[
-           'email'=>'required|email',
-           'password'=>'required|min:6'
-       ]);
-       if (Auth::guard('ogretmen')->attempt(['email'=>$request->email,'password'=>$request->password],$request->remember)){
-            return redirect()->intended(route('ogretmen.giris'));
-       }
-
-            return redirect()->back()->withInput($request->only('email','remember'));
-    }
-
 
 
 }
