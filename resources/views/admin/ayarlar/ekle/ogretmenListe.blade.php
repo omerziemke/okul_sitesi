@@ -32,11 +32,14 @@
 
 
 
-                        <form action="{{route('ogrtdüzen',$ogretmen->id)}}" method="post">
+                       
+                             <form action="{{route('ogrtdüzelt',$ogretmen->id)}}" method="post">
                             {{csrf_field()}}
                             <td>
-                                <button type="submit" value="Sil" class="btn btn-success btn-mini">Düzenle</button>
-                            </td></form>
+                                <button type="submit" value="Düzenle" class="btn btn-success btn-mini">Düzenle</button>
+                            </td>
+
+                        </form>
                         <form action="{{route('ogrtsil',$ogretmen->id)}}" method="post">
                             {{csrf_field()}}
                             <td>

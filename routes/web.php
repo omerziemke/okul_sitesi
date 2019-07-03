@@ -66,9 +66,9 @@ Route::group(['prefix'=>'yonetim'],function(){
 
         Route::get('ogrtdüzenle','OgretmenController@ogrtdüzenle')->name('yonetim.ogrtdüzenle');
         Route::get('ogrtdüzen','AdminController@ogrtdüzenle')->name('ogrtdüzenle');
-        Route::post('ogrtgüncelle/{id}','AdminController@ogrtgüncelle')->name('ogrtgüncelle');
+        Route::post('ogrtgüncelle/{id}','OgretmenController@ogrtgüncelle')->name('ogrtgüncelle');
         Route::get('/admin', 'AdminController@index')->name('admin');
-        Route::post('ogrtdüzenn/{id}','AdminController@ogrtdüzen')->name('ogrtdüzen');
+        Route::post('ogrtdüzelt/{id}','OgretmenController@ogrtdüzen')->name('ogrtdüzelt');
 
 
 });

@@ -198,4 +198,34 @@ class OgretmenController extends Controller
     {
         //
     }
+
+
+     public  function ogrtdüzen($id)
+     {
+        $ogretmen=Ogretmen::find($id);
+
+        return view('admin.ayarlar.ekle.ogrt-edit',compact('ogretmen'));
+    }
+
+
+
+
+     public function ogrtgüncelle(Request $request, $id)
+    {
+       
+         $ogretmen=Ogretmen::find($id);
+
+             $ogretmen->ogrt_adi=request('ogrt_adi');
+             $ogretmen->ogrt_soyadi=request('ogrt_soyadi');
+             $ogretmen->ogrt_telefon=request('ogrt_telefon');
+             $ogretmen->ogrt_sifre=request('ogrt_sifre');
+             $ogretmen->email=request('email');
+             $ogretmen->save();
+              $ogretmenler=Ogretmen::all();
+        return view('admin.ayarlar.ekle.ogretmenListe',compact("ogretmenler"));
+    }
+
+
+
+
 }

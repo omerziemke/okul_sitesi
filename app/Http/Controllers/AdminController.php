@@ -40,11 +40,7 @@ class AdminController extends Controller
 
 
 
-     public  function ogrtdüzen($id){
+   
 
-        $ogretmen=Ogretmen::find($id);
-
-        return view('admin.ayarlar.ekle.ogrt-edit',compact('ogretmen'));
-    }
 
 }
