@@ -1,4 +1,4 @@
-@extends('admin.kullanicilar.kullanıcıtemplate')
+@extends('admin.template')
 
 @section('icerik')
     <div class="row-fluid">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="widget-content nopadding">
 
-                    <form action="{{route('ögrtgüncelle',$ogrenci->id)}}"  method="POST" class="form-horizontal" >
+                    <form action="{{route('güncelle',$ogrenci->id)}}"  method="POST" class="form-horizontal" >
                         {{csrf_field()}}
 
 

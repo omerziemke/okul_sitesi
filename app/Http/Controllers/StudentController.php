@@ -19,12 +19,17 @@ class StudentController extends Controller
     }
 
 
+
+
+
     public function index2()
     {
         $ogrenciler=Student::all();
 
         return view('admin.ayarlar.ekle.ögretmenİndex',compact('ogrenciler'));
     }
+
+
 
 
 
@@ -52,6 +57,8 @@ class StudentController extends Controller
    }
    
 
+
+
     public function notlar ()
     {
         $ogrenciler=notlar::all();
@@ -59,11 +66,14 @@ class StudentController extends Controller
     }
 
 
+
+
     public function notgir ($id)
     {
         $ogrenci=notlar::find($id);
         return view("admin.ayarlar.ekle.not_düzen",compact('ogrenci'));
     }
+
 
 
     

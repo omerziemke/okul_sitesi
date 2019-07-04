@@ -14,12 +14,12 @@ class CreateOgretmensTable extends Migration
     public function up()
     {
         Schema::create('ogretmens', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('ogrt_adi')->nullable();
-            $table->string('ogrt_soyadi')->nullable();
-            $table->string('ogrt_telefon')->nullable();
-            $table->string('ogrt_sifre')->nullable();
-            $table->string('email')->nullable();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->string('meslek');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

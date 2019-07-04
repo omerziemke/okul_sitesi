@@ -10,6 +10,20 @@ use Illuminate\Http\Request;
 class OgretmenController extends Controller
 {
 
+        public function __construct()
+    {
+        $this->middleware('auth:ogretmen');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function loginindex()
+    {
+        return view('admin.kullanicilar.kullanıcıtemplate');
+    }
 
 
 	public function index()
@@ -18,6 +32,12 @@ class OgretmenController extends Controller
 	}
 
 	
+
+	public function ogretmenlogin()
+	{
+		return view('auth.ogretmen-login');
+	}
+
 
 
 	public  function düzen($id)

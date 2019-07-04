@@ -69,6 +69,14 @@ class EkleController extends Controller
 
 
 
+ public  function admindüzen($id){
+
+        $ogrenci=Ekle::find($id);
+
+        return view('admin.ayarlar.ekle.adminedit',compact('ogrenci'));
+    }
+
+
     public function edit($id)
     {
         $ogrenci=Ekle::find($id);
